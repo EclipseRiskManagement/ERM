@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.eclipse.model.riskmanagement/src-gen" creationIcons="false"
+    editDirectory="/org.eclipse.model.riskmanagement.edit/src-gen" editorDirectory="/org.eclipse.model.riskmanagement.editor/src-gen"
+    modelPluginID="org.eclipse.model.riskmanagement" modelName="Riskmanagement" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>riskmanagement.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Riskmanagement" basePackage="org.eclipse.model" disposableProviderFactory="true"
+      ecorePackage="riskmanagement.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="riskmanagement.ecore#//View">
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//View/Positive"/>
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//View/Neutral"/>
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//View/Negative"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="riskmanagement.ecore#//ControlType">
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//ControlType/Technical"/>
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//ControlType/Administrative"/>
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//ControlType/Manegerial"/>
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//ControlType/Legal"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="riskmanagement.ecore#//Status">
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//Status/New"/>
+      <genEnumLiterals ecoreEnumLiteral="riskmanagement.ecore#//Status/Existing"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="riskmanagement.ecore#//Likehood"/>
+    <genClasses ecoreClass="riskmanagement.ecore#//Risk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Risk/view"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Risk/occurrence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Risk/impact"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//Risk/produces"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Risk/name"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//Opportunity"/>
+    <genClasses ecoreClass="riskmanagement.ecore#//Uncertainty"/>
+    <genClasses ecoreClass="riskmanagement.ecore#//Threat"/>
+    <genClasses ecoreClass="riskmanagement.ecore#//Control">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Control/objective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Control/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Control/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//Control/affects"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Control/name"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//Asset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Asset/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//Asset/has"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//Asset/causes"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//Vulnerable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//Vulnerable/indicates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Vulnerable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//Consequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Consequence/name"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Model/name"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//AssetBasedModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//AssetBasedModel/asset"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//ScenarioBasedModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//ScenarioBasedModel/scenario"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//Scenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Scenario/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//Scenario/subscenario"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//Scenario/action"/>
+    </genClasses>
+    <genClasses ecoreClass="riskmanagement.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute riskmanagement.ecore#//Action/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference riskmanagement.ecore#//Action/asset"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
